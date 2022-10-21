@@ -1,0 +1,88 @@
+import type { LibProperties } from './libProperties';
+import { exposeLib } from 'hel-lib-proxy';
+import { LIB_NAME } from 'configs/subApp';
+
+
+export const lib = exposeLib<LibProperties>(LIB_NAME);
+
+// 以下单个导出，支持 import { Button } from 'remote-tdesign-react'; 直接解构的语法
+export const Affix = lib.Affix;
+export const Alert = lib.Alert;
+export const Anchor = lib.Anchor;
+export const Avatar = lib.Avatar;
+export const Badge = lib.Badge;
+export const BaseTable = lib.BaseTable;
+export const Breadcrumb = lib.Breadcrumb;
+export const Button = lib.Button;
+export const Calendar = lib.Calendar;
+export const Card = lib.Card;
+export const Cascader = lib.Cascader;
+export const Checkbox = lib.Checkbox;
+export const Col = lib.Col;
+export const Collapse = lib.Collapse;
+export const ColorPicker = lib.ColorPicker;
+export const ColorPickerPanel = lib.ColorPickerPanel;
+export const Comment = lib.Comment;
+export const ConfigContext = lib.ConfigContext;
+export const ConfigProvider = lib.ConfigProvider;
+export const DatePicker = lib.DatePicker;
+export const DatePickerPanel = lib.DatePickerPanel;
+export const DateRangePicker = lib.DateRangePicker;
+export const DateRangePickerPanel = lib.DateRangePickerPanel;
+export const Dialog = lib.Dialog;
+export const DialogPlugin = lib.DialogPlugin;
+export const Divider = lib.Divider;
+export const Drawer = lib.Drawer;
+export const Dropdown = lib.Dropdown;
+export const EnhancedTable = lib.EnhancedTable;
+export const Form = lib.Form;
+export const Input = lib.Input;
+export const InputNumber = lib.InputNumber;
+export const Layout = lib.Layout;
+export const List = lib.List;
+export const Loading = lib.Loading;
+export const LoadingPlugin = lib.LoadingPlugin;
+export const Menu = lib.Menu;
+export const Message = lib.Message;
+export const MessagePlugin = lib.MessagePlugin;
+export const Notification = lib.Notification;
+export const NotificationPlugin = lib.NotificationPlugin;
+export const Pagination = lib.Pagination;
+export const Popconfirm = lib.Popconfirm;
+export const Popup = lib.Popup;
+export const PrimaryTable = lib.PrimaryTable;
+export const Progress = lib.Progress;
+export const Radio = lib.Radio;
+export const RangeInput = lib.RangeInput;
+export const RangeInputPopup = lib.RangeInputPopup;
+export const Row = lib.Row;
+export const Select = lib.Select;
+export const SelectInput = lib.SelectInput;
+export const SimpleTable = lib.SimpleTable;
+export const Skeleton = lib.Skeleton;
+export const Slider = lib.Slider;
+export const Steps = lib.Steps;
+export const Swiper = lib.Swiper;
+export const Switch = lib.Switch;
+export const Table = lib.Table;
+export const Tabs = lib.Tabs;
+export const Tag = lib.Tag;
+export const TagInput = lib.TagInput;
+export const Textarea = lib.Textarea;
+export const TimePicker = lib.TimePicker;
+export const Tooltip = lib.Tooltip;
+export const Transfer = lib.Transfer;
+export const Tree = lib.Tree;
+export const TreeSelect = lib.TreeSelect;
+export const Upload = lib.Upload;
+export const Watermark = lib.Watermark;
+export const dialog = lib.dialog;
+export const loading = lib.loading;
+export const merge = lib.merge;
+export const message = lib.message;
+export const notification = lib.notification;
+
+// 模块类型导出，方便懒加载时透传给 preFetchLib<Lib>('remote-tedsign-react') 用
+export type Lib = LibProperties;
+
+export default lib;
