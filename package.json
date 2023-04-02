@@ -1,12 +1,13 @@
 {
   "name": "hel-tdesign-react",
   "appGroupName": "hel-tdesign-react",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "hel_proxy/entry.js",
   "module": "hel_proxy_es/entry.js",
   "unpkg": "hel_dist/entry.js",
   "types": "lib/entrance/libTypes.ts",
   "dependencies": {
+    "hel-iso": "^4.0.3",
     "hel-lib-proxy": "^4.0.1",
     "hel-utils": "^4.0.1",
     "react": ">=16.14.0",
@@ -15,7 +16,9 @@
     "tdesign-react": "0.42.1"
   },
   "peerDependencies": {
+    "hel-iso": "^4.0.3",
     "hel-lib-proxy": "^4.0.1",
+    "hel-utils": "^4.0.1",
     "react": ">=16.14.0",
     "react-dom": ">=16.14.0",
     "tdesign-react": "0.42.1"

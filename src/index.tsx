@@ -11,7 +11,8 @@
 |--------------------------------------------------------------------------
 */
 // import { preFetchLib } from 'hel-micro';
-import { libReady, isMasterApp } from 'hel-lib-proxy';
+import { isMasterApp } from 'hel-iso';
+import { libReady } from 'hel-lib-proxy';
 import { LIB_NAME } from './configs/subApp';
 import 'tdesign-react/es/style/index.css';
 
