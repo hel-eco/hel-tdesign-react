@@ -1,7 +1,7 @@
 {
   "name": "hel-tdesign-react",
   "appGroupName": "hel-tdesign-react",
-  "version": "1.2.2",
+  "version": "1.3.0",
   "main": "hel_proxy/entry.js",
   "module": "hel_proxy_es/entry.js",
   "unpkg": "hel_dist/entry.js",
