@@ -6,8 +6,20 @@ import { LIB_NAME } from 'configs/subApp';
 
 const attach = () => getMayStaticShadowNode(LIB_NAME, {});
 
-export default function MyComp() {
+export default React.forwardRef(function MyComp(props: any, ref) {
+  console.log('render RemoteComp!!');
+  // console.log('props.getEnsuredBodyRoot()', props.helContext.getEnsuredBodyRoot());
+  // console.log('getShadowAppRoot', props.helContext.getShadowAppRoot());
+  // console.log('getShadowBodyRoot', props.helContext.getShadowBodyRoot());
+  // console.log('getStaticShadowBodyRoot', props.helContext.getStaticShadowBodyRoot());
   const [visible, setVisible] = React.useState(false);
+  React.useImperativeHandle(ref, () => ({
+    hello() { alert('hellow ref'); },
+  }))
+  React.useEffect(() => {
+    console.log('didMount');
+    return () => console.log('willUnmount');
+  }, []);
 
   const onCLick = () => {
     message.info({
@@ -23,6 +35,11 @@ export default function MyComp() {
 
     <button onClick={() => setVisible(true)}>show dialog</button>
     <h1 className={styled.card} onClick={onCLick}>hi comp, click me</h1>
+    <div>
+      see children: {props.children}
+      <br />
+      see data: {props.data}
+    </div>
   </div>
 
-}
+});
