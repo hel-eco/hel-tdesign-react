@@ -28,7 +28,7 @@ const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 // 解决 react-monaco-editor 颜色不高亮的问题
 const postcssNormalize = require('postcss-normalize');
 // const appPackageJson = require(paths.appPackageJson);
-const subApp = require('./subApp');
+const appInfo = require('./appInfo');
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
@@ -206,7 +206,7 @@ module.exports = function (webpackEnv) {
         (info => path.resolve(info.absoluteResourcePath).replace(/\\/g, '/')),
       // Prevents conflicts when multiple webpack runtimes (from different apps)
       // are used on the same page.
-      jsonpFunction: subApp.jsonpFnName,
+      jsonpFunction: appInfo.jsonpFnName,
       // this defaults to 'window', but by setting it to 'this' then
       // module chunks which are built will work in web workers as well.
       globalObject: 'this',
@@ -721,7 +721,7 @@ module.exports = function (webpackEnv) {
     // Turn off performance processing because we utilize
     // our own hints via the FileSizeReporter
     performance: false,
-    externals: subApp.externals,
+    externals: appInfo.externals,
   };
 
   return toReturn;
